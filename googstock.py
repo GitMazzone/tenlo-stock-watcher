@@ -59,6 +59,7 @@ def getStockExchange(tickerSymbol):
     try:
         company = json.dumps(getQuotes(tickerSymbol), indent = 2)
         rawExchangeData = re.search(re_StockExchangeRaw, company)
+
         stockExchangeRaw = re.search(re_StockExchange, rawExchangeData.group(0))
         stockExchange = re.search(re_QuoteTrimmer, stockExchangeRaw.group(0))
 
@@ -66,6 +67,7 @@ def getStockExchange(tickerSymbol):
         return stockExchange.group(0)
     except:
         print("Bad stock symbol, can't determine exchange.")
+
 
 re_lastTradeTimeYearRaw = r'\d{4}-' # RegEx for line containing full year
 re_lastTradeTimeYear = r'\d{4}' # RegEx for 4-digit year
