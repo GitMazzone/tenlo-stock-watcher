@@ -59,8 +59,8 @@ def getStockExchange(tickerSymbol):
     try:
         company = json.dumps(getQuotes(tickerSymbol), indent = 2)
         rawExchangeData = re.search(re_StockExchangeRaw, company)
-        stockExchangeQuoted = re.search(re_StockExchange, rawExchangeData.group(0))
-        stockExchange = re.search(re_QuoteTrimmer, stockExchangeQuoted.group(0))
+        stockExchangeRaw = re.search(re_StockExchange, rawExchangeData.group(0))
+        stockExchange = re.search(re_QuoteTrimmer, stockExchangeRaw.group(0))
 
         print(tickerSymbol + " exchange: " + stockExchange.group(0))
         return stockExchange.group(0)
