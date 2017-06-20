@@ -7,7 +7,7 @@ Also uses schedule 0.4.3 to run at specified times.
 '''
 
 import csv
-import googstock
+import realtime
 import re
 import schedule
 import time
