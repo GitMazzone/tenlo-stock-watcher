@@ -39,7 +39,6 @@ def getStockPrice(tickerSymbol):
         rawPriceData = re.search(re_StockPriceRaw, company)
         stockPrice = re.search(re_StockPrice, rawPriceData.group(0))
 
-        print(tickerSymbol + ": $" + stockPrice.group(0))
         return stockPrice.group(0)
     except:
         print("Bad stock symbol, can't determine price.")
@@ -63,7 +62,6 @@ def getStockExchange(tickerSymbol):
         stockExchangeRaw = re.search(re_StockExchange, rawExchangeData.group(0))
         stockExchange = re.search(re_QuoteTrimmer, stockExchangeRaw.group(0))
 
-        print(tickerSymbol + " exchange: " + stockExchange.group(0))
         return stockExchange.group(0)
     except:
         print("Bad stock symbol, can't determine exchange.")
