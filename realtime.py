@@ -7,6 +7,8 @@ stock price stripped of any surrounding characters. All stock data is fetched in
 real time.
 '''
 
+# TODO: Compare fetch time of regex vs. other methods
+
 from googlefinance import getQuotes
 import json
 import re
